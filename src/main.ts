@@ -1,8 +1,7 @@
-import Index from "@/components/Index.vue";
-import { App } from "vue";
+import { createApp } from 'vue'
+import App from './App.vue'
+import ViteComp from './index'
 
-Index.install = function(app: App) {
-  app.component("Test", Index);
-};
-
-export default Index;
+const app = createApp(App)
+app.use(ViteComp)
+app.mount('#app') 

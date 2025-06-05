@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViteComp 使用示例</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../dist/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>ViteComp 组件库使用示例</h1>
+        <hello 
+            msg="欢迎使用 ViteComp！" 
+            desc="这是一个完整的 Vue3 组件库示例"
+            button-text="点击测试"
+            @click="handleClick"
+        ></hello>
+    </div>
+
+    <script type="module">
+        import ViteComp from '../dist/index.es.js'
+        
+        const { createApp } = Vue
+        
+        const app = createApp({
+            methods: {
+                handleClick(event) {
+                    alert('Hello 组件被点击了！')
+                    console.log('点击事件:', event)
+                }
+            }
+        })
+        
+        app.use(ViteComp)
+        app.mount('#app')
+    </script>
+</body>
+</html> 
